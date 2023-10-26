@@ -28,6 +28,24 @@ const hikeControllers = {
   // post new hike
   createHike: async (req, res) => {
     const { title, rating, image, description } = req.body
+    let emptyFields = []
+    if (!title) {
+      emptyFields.push("title")
+    }
+    if (!rating) {
+      emptyFields.push("rating")
+    }
+    if (!image) {
+      emptyFields.push("image")
+    }
+    if (!description) {
+      emptyFields.push("description")
+    }
+    if (emptyFields.length) {
+      return res
+        .status(400)
+        .json({ error: "Please fill in all fields", emptyFields })
+    }
     try {
       const hike = await Hike.create({ title, rating, image, description })
       res.status(200).json(hike)
