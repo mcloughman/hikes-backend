@@ -12,10 +12,10 @@ const loginUser = async (req, res) => {
   try {
     // signup is the static method we created in our userModel
     const user = await User.login(email, password)
-
+    console.log(user._id)
     const token = createToken(user._id)
 
-    res.status(200).json({ email, token })
+    res.status(200).json({ email, token, userId: user._id })
   } catch (error) {
     res.status(400).json({ error: error.message })
   }

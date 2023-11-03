@@ -13,7 +13,7 @@ router.get("/", getHikes)
 // Get single workout
 router.get("/:id", getHike)
 
-router.post("/", createHike)
+router.post("/", requireAuth, createHike)
 
 router.delete("/:id", requireAuth, deleteHike)
 

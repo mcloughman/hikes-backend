@@ -20,6 +20,11 @@ const hikeSchema = new Schema(
       type: String,
       required: true,
     },
+    // we now associate each hike with it's creator
+    user_id: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 )
