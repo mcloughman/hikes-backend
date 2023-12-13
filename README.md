@@ -2,8 +2,8 @@
 
 This repository contains the backend code for a MERN app focused on hikes. It is based on the Net Ninja MERN with Authorization series.
 
-## Live Demo
-https://mern-hike-michaelloughman.netlify.app/
+## Live Demo - https://mern-hike-michaelloughman.netlify.app/
+
 
 ## Features
 
